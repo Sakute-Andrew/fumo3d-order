@@ -56,6 +56,7 @@ return [
             'throw' => false,
         ],
 
+        'admin'  => [ 'driver' => 'local', 'root'   => storage_path('app'), ],
     ],
 
     /*
@@ -72,5 +73,17 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the filesystem disk that should be used by the
+    | admin panel. The "local" disk is available to your application.
+    |
+    */
+
+
 
 ];
