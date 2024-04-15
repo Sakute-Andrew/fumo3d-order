@@ -1,0 +1,45 @@
+.card-page {
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start; /* Align items to the top */
+        gap: 20px; /* Adjust the space between blocks */
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        width: 100%; /* Each block takes full width */
+        padding: 20px; /* Add padding inside each block */
+        margin: 10px;
+        border: 0.5px solid #8d9091; /* Add border */
+        border-radius: 16px;
+        box-sizing: border-box; /* Include padding in width calculation */
+        text-align: left; /* Center align text */
+
+
+
+
+        .card-page__title {
+            font-size: 1.5rem;
+            margin: 10px;
+        }
+
+        .card-page__description {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px;
+        }
+
+    }
+}

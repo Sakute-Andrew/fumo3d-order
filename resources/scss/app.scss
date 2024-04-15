@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import
+'fonts',
+'main_wrapper',
+'mixins',
+'media',
+'util',
+'globals',
+'variables';
+@import
+'elements/button',
+'elements/menu',
+'elements/mobile_overlay',
+'elements/quote',
+'elements/hello',
+'elements/card_page',
+'elements/why_us',
+'elements/footer',
+'elements/header';
+
+

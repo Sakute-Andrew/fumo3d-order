@@ -1,0 +1,25 @@
+:root {
+    --color-dark: #23242c;
+    --color-dark-alt: #111111;
+    --color-light: #FFFFFF;
+    --color-accent: #363eba;
+    --color-accent-alt: #f6ece8;
+    --color-blue: #0b4a9e;
+    --color-blue-alt: #2e48a1;
+    --border: 1px solid var(--color-blue-alt);
+    --color-decoration: #cdcdcd8d;
+    --border-radius: 0.5rem;
+    --shadow: 0 5px 0 0 var(--color-dark);
+    --container-width: 1141px;
+    --container-padding-x: 1rem;
+    --section-padding-y: 70px;
+    --transition-duration: 0.3s;
+
+    @include desktop {
+        --section-padding-y: 50px;
+    }
+
+    @include mobile {
+        --section-padding-y: 30px;
+    }
+}

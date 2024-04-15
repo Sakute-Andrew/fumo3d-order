@@ -1,0 +1,23 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    padding: 0.65rem 3rem;
+    color: var(--color-light);
+    cursor: pointer;
+    background-color: var(--color-blue-alt);
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+
+    @include mobile {
+        justify-content: center;
+        text-align: center;
+    }
+
+    &::after {
+        position: absolute;
+        inset: 50% 10% 0;
+        z-index: -1;
+        content: '';
+    }
+}

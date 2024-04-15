@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Routing\Router;
+use  App\Admin\Controllers\UserController;
+use  App\Admin\Controllers\MaterialsController;
+use  App\Admin\Controllers\OrderController;
 
 Admin::routes();
 
@@ -12,5 +15,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('demo/users', UserController::class);
+    $router->resource('demo/orders', OrderController::class);
+    $router->resource('demo/materials', MaterialsController::class);
 
 });

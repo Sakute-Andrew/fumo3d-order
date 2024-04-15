@@ -4,68 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project FUMO</title>
-    <link href="/css/style.css" rel="stylesheet" >
     @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-<div class="main-wrapper">
-    <header class="header">
-        <div class="header__navbar">
-            <div class="navbar__left">
-                <a href="#" class="navbar__logo">
-                    <img src="images/logo.png" alt="Logo">
-                </a>
+
+        <header class="header">
+            <div class="header__inner container">
+                <div class="header__for-mobile">
+                    <figure class="header__logo">
+                        <img class="header__decoration decoration decoration--mobile"
+                             src="./images/decorations/Decoration.svg" alt="Project Fumo">
+                    </figure>
+                    <button class="header__burger-button burger-button visible-mobile" type="button"
+                            onclick="mobileOverlay.showModal()">
+                        <span class="visually-hidden">Open navigation menu</span>
+                    </button>
+                </div>
+                <nav class="header__menu menu hidden-mobile">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">About us</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Materials</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Make Order</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Calculation</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__sign-in-button button" type="button"
+                        onclick="mobileOverlay.showModal()" name="Sign in">
+                    Sign in
+                </button>
             </div>
-            <div class="navbar__links">
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Materials</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Calculate Price</a></li>
-                </ul>
-            </div>
-            <div class="navbar__right">
-                <a href="#" class="navbar__button">Sign Up</a>
-            </div>
-        </div>
-    </header>
-    <main>
+            <div class="header__divider"></div>
+        </header>
+        <main>
         <div class="main-wrapper">
             <section class="toast-layout">
-                <article class="toast-layout__hello-page">
+                <article class="hello-page">
                     <div class="hello-page">
-                        <div class="hello-page_article">
+                        <div class="hello-page__article">
                             <h1 class="article__title">Welcome to Project FUMO</h1>
-                            <h2 class="article__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</h2>
-                            <p class="article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
+                            <h3 class="article__subtitle">Fresh ideas. For everybody</h3>
+                            <p class="article__description">Your manufacturer in real time. Order industrial quality custom parts at low cost. All materials from plastic to metal - FDM, SLA, SLS, MJF, DMLS.</p>
                         </div>
                         <div class="hello-page__content">
                             <a>
-                                <img />
+                                <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/06/3D-printer-types.jpg" />
                             </a>
-                    </div>
-                </article>
-                <article class="toast-layout__card-page">
-                    <div class="card-page__wrapper">
-                        <div class="card-page__content">
-                            <h1 class="card-page__title">Upload your project</h1>
-                            <p class="card-page__description">More than 35 file formats are supported, including STL, OBJ, STEP and ZIP. All uploads are secure and confidential.</p>
-                        </div>
-                        <div class="card-page__content">
-                            <h1 class="card-page__title">Chose your material</h1>
-                            <p class="card-page__description">Catalog has more than 20 printing materials and colours. We also offer special requirements</p>
-                            <a href="#" class="card-page__button">See materials -></a>
-                        </div>
-                        <div class="card-page__content">
-                            <h1 class="card-page__title">Select your delivery plan</h1>
-                            <p class="card-page__description">Choose your preferred deliverer from more than 150 professional services worldwide and receive your order fast and hassle-free.</p>
                         </div>
                     </div>
                 </article>
-                <article class="toast-layout__why-us">
+                <article class="card-page">
+                    <div class="card-page__main">
+                        <h3 class="card-page__title">How it works?</h3>
+                        <div class="card-page__wrapper">
+                                <div class="card-page__content">
+                                    <img src="https://media.graphassets.com/ibdcfgStSWW3w6zY6AYk">
+                                    <h3 class="card-page__title">Upload your project</h3>
+                                    <p class="card-page__description">More than 35 file formats are supported, including STL, OBJ, STEP and ZIP. All uploads are secure and confidential.</p>
+                                </div>
+                                <div class="card-page__content">
+                                    <img src="https://media.graphassets.com/Sr6vnP8ATEOvAq15ncNg">
+                                    <h3 class="card-page__title">Chose your material</h3>
+                                    <p class="card-page__description">Catalog has more than 20 printing materials and colours. We also offer special requirements</p>
+                                    <a href="#" class="card-page__button">See materials -></a>
+                                </div>
+                                <div class="card-page__content">
+                                    <img src="https://media.graphassets.com/MnGBcA9QjebKRMZEWshz">
+                                    <h3 class="card-page__title">Select your delivery plan</h3>
+                                    <p class="card-page__description">Choose your deliverer from more than 150 services worldwide and receive your order fast and hassle-free.</p>
+                                </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="why-us">
                     <div class="why-us__wrapper">
                         <div class="why-us__left">
-                            <h1>Why Fumo?</h1>
+                            <h2>Why Fumo?</h2>
+                        </div>
+                        <div class="why-us__image">
+                            <img src="https://media.graphassets.com/resize=fit:max,height:400,width:600/output=format:webp/RGxC05HCRJaketsk5xB4" alt="Why us">
                         </div>
                         <div class="why-us__right">
                             <ol class="numbered-list">
@@ -102,16 +126,13 @@
                             </li>
                             </ol>
                         </div>
-                        <div class="why-us__image">
-
-                        </div>
                     </div>
                 </article>
                 <article class="toast-layout__latest-tech">
                     <div class="latest-tech__wrapper">
                         <div class="latest-tech__top">
                         <div class="latest-tech__left">
-                            <h1 class="latest-tech__title">Latest Technology</h1>
+                            <h2 class="latest-tech__title">Latest Technology</h2>
                             <p class="latest-tech__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
                             <a href="#" class="latest-tech__button">Learn More</a>
                         </div>
@@ -120,8 +141,9 @@
                         </div>
                         </div>
                         <div class="latest-tech__bottom">
-                            <button class="button">
+                            <button class="button"/>
                         </div>
+
                     </div>
                 </article>
 
@@ -130,10 +152,49 @@
                 </article>
             </section>
         </div>
-    </main>
-    <footer>
-        <p>&copy; {{ date('Y') }} Project FUMO. All rights reserved.</p>
-    </footer>
-</div>
-</body>
+
+        </main>
+            <footer class="footer">
+                <div class="footer__inner container">
+                    <div class="footer__left">
+                        <div class="footer__block">
+                            <h3 class="footer__heading">
+
+                                Project FUMO. 3D Printing Service
+                            </h3>
+                            <p>&copy; {{ date('Y') }} Project FUMO. All rights reserved.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="footer__right">
+
+                        <div class="footer__col">
+                            <h4 class="footer__small-heading">
+                                The legals
+                            </h4>
+
+                            <nav class="footer__menu menu">
+                                <ul class="menu__list menu__list--vertical">
+                                    <li class="menu__item ">
+                                        <a class="menu__link" href="#">Copyright</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a class="menu__link" href="#">Privacy</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a class="menu__link" href="#">Contact</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a class="menu__link" href="#">Terms</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        </footer>
+    </body>
 </html>

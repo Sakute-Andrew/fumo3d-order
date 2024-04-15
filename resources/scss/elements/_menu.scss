@@ -1,0 +1,22 @@
+.menu {
+    &__list {
+        display: flex;
+        column-gap: 4.5rem;
+
+        &--vertical {
+            flex-direction: column;
+            row-gap: 1.5rem;
+        }
+    }
+
+    &__item {
+    }
+
+    &__link {
+        &:hover {
+            color: var(--color-accent);
+            border-bottom: 1px solid var(--color-accent);
+        }
+    }
+
+}

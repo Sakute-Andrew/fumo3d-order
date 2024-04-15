@@ -1,0 +1,23 @@
+.why-us{
+
+    &__wrapper{
+        display: inline-block;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+    &__left{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+
+
+}
