@@ -4,18 +4,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin name
+    | Open-Admin name
     |--------------------------------------------------------------------------
     |
-    | This value is the name of Open-admin, This setting is displayed on the
+    | This value is the name of Open-Admin, This setting is displayed on the
     | login page.
     |
     */
-    'name' => 'FUMO Admin',
+    'name' => 'FUMO-Admin',
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin logo
+    | Open-Admin logo
     |--------------------------------------------------------------------------
     |
     | The logo of all admin pages. You can also set it as an image by using a
@@ -26,7 +26,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin mini logo
+    | Open-Admin mini logo
     |--------------------------------------------------------------------------
     |
     | The logo of all admin pages when the sidebar menu is collapsed. You can
@@ -38,17 +38,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin bootstrap setting
+    | Open-Admin bootstrap setting
     |--------------------------------------------------------------------------
     |
-    | This value is the path of open-admin bootstrap file.
+    | This value is the path of Open-Admin bootstrap file.
     |
     */
     'bootstrap' => app_path('Admin/bootstrap.php'),
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin route settings
+    | Open-Admin route settings
     |--------------------------------------------------------------------------
     |
     | The routing configuration of the admin page, including the path prefix,
@@ -58,7 +58,7 @@ return [
     */
     'route' => [
 
-        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin-portal'),
+        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
 
         'namespace' => 'App\\Admin\\Controllers',
 
@@ -67,7 +67,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin install directory
+    | Open-Admin install directory
     |--------------------------------------------------------------------------
     |
     | The installation directory of the controller and routing configuration
@@ -79,7 +79,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin html title
+    | Open-Admin html title
     |--------------------------------------------------------------------------
     |
     | Html title for all pages.
@@ -99,7 +99,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin auth setting
+    | Open-Admin auth setting
     |--------------------------------------------------------------------------
     |
     | Authentication settings for all admin pages. Include an authentication
@@ -111,8 +111,6 @@ return [
     'auth' => [
 
         'controller' => App\Admin\Controllers\AuthController::class,
-
-        'guard' => 'admin',
 
         'guards' => [
             'admin' => [
@@ -134,11 +132,6 @@ return [
         // Redirect to the specified URI when user is not authorized.
         'redirect_to' => 'auth/login',
 
-        // Protect agaist brute force attacks
-        'throttle_logins'   => true,
-        'throttle_attempts' => 5,
-        'throttle_timeout'  => 900, // in seconds
-
         // The URIs that should be excluded from authorization.
         'excepts' => [
             'auth/login',
@@ -148,7 +141,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin upload setting
+    | Open-Admin upload setting
     |--------------------------------------------------------------------------
     |
     | File system configuration for form upload files and images, including
@@ -169,10 +162,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Open-admin database settings
+    | Open-Admin database settings
     |--------------------------------------------------------------------------
     |
-    | Here are database settings for open-admin builtin model & tables.
+    | Here are database settings for Open-Admin builtin model & tables.
     |
     */
     'database' => [
@@ -209,7 +202,7 @@ return [
     | User operation log setting
     |--------------------------------------------------------------------------
     |
-    | By setting this option to open or close operation log in open-admin.
+    | By setting this option to open or close operation log in Open-Admin.
     |
     */
     'operation_log' => [
@@ -228,32 +221,9 @@ return [
          * or specific method to path like: get:admin/auth/logs.
          */
         'except' => [
-            env('ADMIN_ROUTE_PREFIX', 'admin').'/auth/logs*',
-        ],
-
-        /*
-         * Replace input fields that should not be logged
-         */
-        'filter_input' => [
-            'token'             => '*****-filtered-out-*****',
-            'password'          => '*****-filtered-out-*****',
-            'password_remember' => '*****-filtered-out-*****',
+            'admin/auth/logs*',
         ],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Indicates whether to check route permission.
-    |--------------------------------------------------------------------------
-    */
-    'check_route_permission' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Indicates whether to check menu roles.
-    |--------------------------------------------------------------------------
-    */
-    'check_menu_roles' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -263,28 +233,33 @@ return [
     | Set a default avatar for newly created users.
     |
     */
-    'default_avatar' => '/vendor/open-admin/open-admin/gfx/user.svg',
+    'default_avatar' => '/vendor/Open-Admin/AdminLTE/dist/img/user2-160x160.jpg',
 
     /*
     |--------------------------------------------------------------------------
     | Admin map field provider
     |--------------------------------------------------------------------------
     |
-    | Supported: "openstreetmaps", "tencent", "google", "yandex".
+    | Supported: "tencent", "google", "yandex".
     |
     */
-    'map_provider' => 'openstreetmaps',
+    'map_provider' => 'google',
 
     /*
     |--------------------------------------------------------------------------
     | Application Skin
     |--------------------------------------------------------------------------
     |
-    | A custom class to overwrite your admin panel looks.
-    | The orginal adminlte theme is not used anymore.
+    | This value is the skin of admin pages.
+    | @see  https://adminlte.io/docs/2.4/layout
+    |
+    | Supported:
+    |    "skin-blue", "skin-blue-light", "skin-yellow", "skin-yellow-light",
+    |    "skin-green", "skin-green-light", "skin-purple", "skin-purple-light",
+    |    "skin-red", "skin-red-light", "skin-black", "skin-black-light".
     |
     */
-    'skin' => 'your-custom-skin-class',
+    'skin' => 'skin-blue-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -292,6 +267,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This value is the layout of admin pages.
+    | @see  https://adminlte.io/docs/2.4/layout
     |
     | Supported: "fixed", "layout-boxed", "layout-top-nav", "sidebar-collapse",
     | "sidebar-mini".
@@ -314,7 +290,7 @@ return [
     | Show version at footer
     |--------------------------------------------------------------------------
     |
-    | Whether to display the version number of open-admin at the footer of
+    | Whether to display the version number of Open-Admin at the footer of
     | each page
     |
     */
@@ -338,6 +314,20 @@ return [
     | whether enable menu bind to a permission
     */
     'menu_bind_permission' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Indicates whether to check route permission.
+    |--------------------------------------------------------------------------
+    */
+    'check_route_permission' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Indicates whether to check menu roles.
+    |--------------------------------------------------------------------------
+    */
+    'check_menu_roles'       => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -371,13 +361,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Enable/Disable user_panel in sidebar
-    |--------------------------------------------------------------------------
-    */
-    'enable_user_panel' => false,
-
-    /*
-    |--------------------------------------------------------------------------
     | Alert message that will displayed on top of the page.
     |--------------------------------------------------------------------------
     */
@@ -385,7 +368,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | The global Grid action display class. (Actions::class, DropdownActions:class or ContextMenuActions::class)
+    | The global Grid action display class.
     |--------------------------------------------------------------------------
     */
     'grid_action_class' => \OpenAdmin\Admin\Grid\Displayers\Actions\Actions::class,
@@ -406,19 +389,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | You can find all available extensions here
-    | https://github.com/open-admin-extensions.
+    | https://github.com/Open-Admin-extensions.
     |
     */
     'extensions' => [
-        'log-viewer' => [
-            'bypass_protected_urls' => true,
-            //'bypass_protected_urls_find' => ['.'],          // default ['.']
-            //'bypass_protected_urls_replace' => ['[dot]'],   // default ['[dot]']
-        ],
-        'media-manager' => [
-            'disk' => 'public'   // Points to the disk set in config/filesystem.php
-        ],
-
 
     ],
 ];

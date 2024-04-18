@@ -1,4 +1,4 @@
-body {
+.body {
     font-family: var(--font-family-base);
     font-size: 16px;
     font-weight: 500;
@@ -50,7 +50,7 @@ article{
 
 }
 
-section {
+.section {
     padding-top: 10rem;
 
     @include tablet {

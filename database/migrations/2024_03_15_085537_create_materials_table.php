@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('material_strength', 50)->notNull();
             $table->string('hdt', 50)->notNull();
             $table->string('tensile_elongation', 50)->notNull();
-            $table->binary('material_photo')->notNull();
+            $table->string('material_photo')->notNull();
             $table->timestamps();
         });
     }

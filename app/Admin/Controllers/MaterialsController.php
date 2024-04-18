@@ -32,7 +32,7 @@ class MaterialsController extends AdminController
         $grid->column('material_strength', __('Material strength'));
         $grid->column('hdt', __('Hdt'));
         $grid->column('tensile_elongation', __('Tensile elongation'));
-        $grid->
+        $grid->column('material_photo', __('Material photo'))->image();
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -55,9 +55,7 @@ class MaterialsController extends AdminController
         $show->field('material_strength', __('Material strength'));
         $show->field('hdt', __('Hdt'));
         $show->field('tensile_elongation', __('Tensile elongation'));
-        $show->
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('material_photo', __('Material photo'));
 
         return $show;
     }
@@ -71,12 +69,14 @@ class MaterialsController extends AdminController
     {
         $form = new Form(new Materials());
 
+        $form->display('material_id', __('Material id'));
+
         $form->text('material_name', __('Material name'));
         $form->text('material_description', __('Material description'));
         $form->text('material_strength', __('Material strength'));
         $form->text('hdt', __('Hdt'));
         $form->text('tensile_elongation', __('Tensile elongation'));
-        $form->textarea('material_photo', __('Material photo'));
+        $form->image('material_photo', __('Material photo'));
 
         return $form;
     }

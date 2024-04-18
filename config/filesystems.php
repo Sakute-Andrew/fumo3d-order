@@ -29,6 +29,12 @@ return [
     */
 
     'disks' => [
+        'admin' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'visibility' => 'public',
+            'url' => env('APP_URL').'/uploads',
+        ],
 
         'local' => [
             'driver' => 'local',
@@ -42,7 +48,6 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
-
         ],
 
         's3' => [
@@ -56,8 +61,6 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-
-        'admin'  => [ 'driver' => 'local', 'root'   => storage_path('app'), ],
 
     ],
 
@@ -75,17 +78,5 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Admin Filesystem Disk
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify the filesystem disk that should be used by the
-    | admin panel. The "local" disk is available to your application.
-    |
-    */
-
-
 
 ];
